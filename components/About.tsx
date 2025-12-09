@@ -55,7 +55,7 @@ const About: React.FC = () => {
                                 My journey began with a curiosity for how things work, which quickly evolved into a passion for building systems that work <i>better</i>.
                             </p>
                             <p>
-                                As the <strong className="text-gray-900">Founder & CTO of Attenda Africa</strong>, I didn't just write code; I navigated the complexities of product-market fit, user acquisition, and scaling infrastructure to support thousands of active users nationwide. This entrepreneurial experience gives me a unique edge—I build software with the business outcome in mind.
+                                As the <strong className="text-gray-900">Ex-Founder & CTO of Attenda Africa</strong>, I didn't just write code; I navigated the complexities of product-market fit, user acquisition, and scaling infrastructure to support thousands of active users nationwide. This entrepreneurial experience gives me a unique edge—I build software with the business outcome in mind.
                             </p>
                             <p>
                                 When I'm not architecting cloud-native solutions, I'm deeply invested in the tech community. From being a Google Open Source Mentee to mentoring the next generation of developers, I believe in lifting others as we climb.

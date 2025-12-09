@@ -19,27 +19,43 @@ export const EXPERIENCES: Experience[] = [
     period: "Jan 2025 – Present",
     description: [
       "Architected and developed an intelligent auto-parts marketplace (Next.js, Node.js, MongoDB) that helps users find genuine vehicle and industrial parts with AI-powered recommendations.",
-      "Built a Smart Assistant API trained on user behavior to automate product categorization and in-session suggestions — increasing conversions by ~30%.",
-      "Designed a real-time admin dashboard with instant CRUD updates, role-based access control, and Paystack-integrated checkout flow.",
-      "Migrated the system from React to Next.js (SSR/SSG) for SEO and scalability, supporting over 2,500 active users."
+      "Developed an in-house Smart Recommendation API trained on user behavior, boosting conversions by ~30%.",
+      "Implemented a real-time admin dashboard with role-based access, instant CRUD operations, and Paystack checkout.",
+      "Migrated the system from React to Next.js (SSR/SSG) to improve SEO, scalability, and performance for 2,500+ active users."
     ],
-    techStack: ["Next.js", "Node.js", "Express", "MongoDB", "TailwindCSS", "JWT", "Socket.IO", "Paystack API"],
-    link: "https://seamlessautopart.com"
+    techStack: ["Next.js", "Node.js", "Express", "MongoDB", "TailwindCSS", "JWT", "Socket.IO", "Paystack API", "AI Recommendation API"],
+    link: "https://seamlesssautopart.netlify.app/"
+  },
+  {
+    company: "ParcelTrack",
+    role: "Senior Full Stack Developer (Contract, USA)",
+    location: "Remote (USA)",
+    period: "Nov 2024 – Dec 2024",
+    description: [
+      "Delivered ParcelTrack, a full-stack enterprise logistics & dispatch platform with a dual ecosystem: Customer Portal and Secure Admin Dashboard.",
+      "Architected a production-grade backend using Supabase PostgreSQL with Row Level Security (RLS) for strict per-user isolation.",
+      "Built SQL triggers & functions to automate user creation, timeline propagation, and status updates, removing 100% manual admin tasks.",
+      "Built a real-time tracking engine using react-simple-maps with multi-country stopovers, animated transitions, and a fully responsive timeline UI.",
+      "Designed a premium, modern SaaS UI using Next.js 16 (App Router), Tailwind v4, TypeScript & Framer Motion with micro-interactions and glassmorphism effects.",
+      "Created interactive operations analytics using Chart.js to help logistics teams monitor delivery performance and bottlenecks."
+    ],
+    techStack: ["Next.js 16", "TypeScript", "Supabase PostgreSQL", "TailwindCSS v4", "Framer Motion", "react-simple-maps", "Chart.js"],
+    link: "https://www.parceltrack.store/"
   },
   {
     company: "Attenda Africa",
-    role: "Lead Full-Stack Developer: CTO / Founder",
+    role: "Ex-Founder & CTO",
     location: "Lagos, Nigeria",
     period: "May 2023 – Dec 2024",
     description: [
-      "Led the rebuild of Attenda, a geo-attendance and facial verification platform for organizations and NYSC CDS groups.",
-      "Migrated architecture from React.js + Firebase to Next.js + Supabase, improving scalability, performance, and security.",
-      "Built Telegram automation for attendance, announcements, and reporting — scaling across multiple states in Nigeria.",
-      "Developed AI-driven verification using Hugging Face models and location APIs to prevent spoofing and ensure authenticity.",
-      "Designed analytics dashboards for attendance tracking and engagement insights using Chart.js.",
-      "Successfully piloted Attenda with NYSC, achieving adoption in several CDS groups before product exit in late 2024."
+      "Founded and led the development of Attenda, a geo-attendance and facial verification platform.",
+      "Adopted by a government organisation (NDA) for nationwide attendance monitoring.",
+      "Raised over $10,000 in funding from investors and received AWS cloud credits as part of support for the platform.",
+      "Built the full architecture with Next.js + Supabase, integrating AI facial verification (Hugging Face) and Geo APIs.",
+      "Integrated Telegram automation for check-ins, announcements & reporting.",
+      "Successfully piloted across multiple NYSC CDS groups, serving 1,000+ users and 600+ admins."
     ],
-    techStack: ["Next.js", "Supabase", "TailwindCSS", "Chart.js", "Telegram API", "Hugging Face API", "Edge Functions"],
+    techStack: ["Next.js", "Supabase", "TailwindCSS", "Hugging Face API", "Chart.js", "Telegram API", "Edge Functions", "RBAC"],
     link: "https://attenda.africa"
   },
   {
@@ -48,9 +64,9 @@ export const EXPERIENCES: Experience[] = [
     location: "Nairobi, Kenya",
     period: "Jan 2024 – Apr 2024",
     description: [
-      "Designed and built the Africa Sales in Technology Awards (Afrisata) platform, celebrating excellence in tech sales across Africa.",
-      "Developed the voting system, admin portal, and payment integration to handle thousands of participant votes securely.",
-      "Integrated role-based authentication, analytics, and live leaderboard tracking."
+      "Built the entire digital infrastructure for Africa Sales in Technology Awards, including secure voting, leaderboards & payment flows.",
+      "Created admin dashboards for managing candidates, analytics & event monitoring.",
+      "Integrated secure Paystack payments and real-time vote tracking."
     ],
     techStack: ["React", "Node.js", "Express", "MongoDB", "Paystack API", "TailwindCSS"],
     link: "https://afrisata.com"
@@ -61,8 +77,8 @@ export const EXPERIENCES: Experience[] = [
     location: "Ogun State, Nigeria",
     period: "Apr 2023 – Jun 2023",
     description: [
-      "Built a high-performance, SEO-optimized website for Sunrise Water Park to enhance brand presence and online bookings.",
-      "Delivered a responsive and visually engaging UI showcasing attractions, pricing, and contact integrations."
+      "Developed a high-performance, SEO-optimized website showcasing attractions, pricing & booking information.",
+      "Delivered a visually engaging, responsive UI with strong user experience and brand consistency."
     ],
     techStack: ["Next.js", "TailwindCSS", "Vercel"],
     link: "https://sunrisewaterpark.com"
@@ -70,12 +86,11 @@ export const EXPERIENCES: Experience[] = [
   {
     company: "Lagos State University (LASU)",
     role: "Career Break - Bachelor's Degree",
-    location: "Ojo, Lagos, Nigeria",
+    location: "Ojo, Lagos",
     period: "Oct 2020 – Jun 2023",
     description: [
-      "Pursued a Bachelor’s Degree in Computer Science to strengthen theoretical and technical depth.",
-      "Focused on algorithms, databases, and software engineering, while building personal and open-source projects.",
-      "Active in campus tech communities, mentoring peers, and leading coding initiatives."
+      "Pursued a Bachelor’s Degree in Computer Science with a focus on algorithms, databases & software engineering.",
+      "Built personal and open-source projects while mentoring junior developers through campus tech communities."
     ],
     techStack: ["Algorithms", "Databases", "Software Engineering"]
   },
@@ -85,24 +100,22 @@ export const EXPERIENCES: Experience[] = [
     location: "Remote",
     period: "Jun 2020 – Sep 2020",
     description: [
-      "Selected for the Google Open Source Mentorship Program during the COVID-19 pandemic, contributing to the AdSense UI/UX team.",
-      "Collaborated with Google engineers to improve the AdSense dashboard experience for global publishers.",
-      "Built reusable components with React (v16), TypeScript, and Material UI, integrating REST APIs for analytics and revenue insights.",
-      "Improved load time by 20% through rendering and bundling optimization."
+      "Selected for the Google Open Source Program; contributed to the AdSense UI/UX team.",
+      "Developed reusable UI components in React + TypeScript and integrated REST APIs for global publisher dashboards.",
+      "Improved dashboard load time by 20% through optimization."
     ],
-    techStack: ["React", "TypeScript", "Redux", "Material-UI", "Jest", "GCP"]
+    techStack: ["React", "TypeScript", "Redux", "Material-UI", "Jest", "Google Cloud"]
   },
   {
     company: "Aptech Computer Education",
-    role: "Software Development Trainee",
+    role: "Software Development Trainee (CPISM Program)",
     location: "Pune, India",
     period: "Jan 2019 – Dec 2019",
     description: [
-      "Completed Certificate in Proficiency in Information Systems Management (CPISM), building a strong foundation in software development and database systems.",
-      "Gained practical experience in JavaScript, C#, SQL, and system design, preparing for full-stack development roles.",
-      "Developed mini projects integrating web and desktop applications."
+      "Completed the CPISM program, gaining foundational expertise in programming, databases & system design.",
+      "Built mini-projects across web & desktop environments using JavaScript, C#, and SQL."
     ],
-    techStack: ["JavaScript", "C#", "SQL", "System Design"]
+    techStack: ["JavaScript", "C#", "SQL"]
   }
 ];
 

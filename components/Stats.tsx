@@ -1,29 +1,30 @@
-import React, { useEffect, useState } from 'react';
-import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, animate } from 'framer-motion';
 import { STATS } from '../constants';
 
 const Counter = ({ value }: { value: string }) => {
     // Extract number part
     const numericValue = parseInt(value.replace(/\D/g, ''));
     const suffix = value.replace(/[0-9]/g, '');
-    
-    const count = useMotionValue(0);
-    const rounded = useTransform(count, (latest) => Math.round(latest));
-    const [displayValue, setDisplayValue] = useState(0);
-
-    useEffect(() => {
-        const unsubscribe = rounded.on("change", (v) => setDisplayValue(v));
-        return unsubscribe;
-    }, [rounded]);
+    const ref = useRef<HTMLSpanElement>(null);
 
     return (
         <motion.span
+            ref={ref}
             onViewportEnter={() => {
-                animate(count, numericValue, { duration: 2 });
+                animate(0, numericValue, {
+                    duration: 2.5,
+                    ease: "easeOut",
+                    onUpdate: (latest) => {
+                        if (ref.current) {
+                            ref.current.innerText = Math.round(latest) + suffix;
+                        }
+                    }
+                });
             }}
             viewport={{ once: true }}
         >
-            {displayValue}{suffix}
+            0{suffix}
         </motion.span>
     );
 };

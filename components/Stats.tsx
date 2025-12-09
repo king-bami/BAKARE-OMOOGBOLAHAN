@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { motion, useSpring, useTransform, animate } from 'framer-motion';
+import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 import { STATS } from '../constants';
 
 const Counter = ({ value }: { value: string }) => {
@@ -7,7 +7,7 @@ const Counter = ({ value }: { value: string }) => {
     const numericValue = parseInt(value.replace(/\D/g, ''));
     const suffix = value.replace(/[0-9]/g, '');
     
-    const count = useSpring(0, { duration: 2000 });
+    const count = useMotionValue(0);
     const rounded = useTransform(count, (latest) => Math.round(latest));
     const [displayValue, setDisplayValue] = useState(0);
 
@@ -18,8 +18,8 @@ const Counter = ({ value }: { value: string }) => {
 
     return (
         <motion.span
-            whileInView={() => {
-                animate(count, numericValue);
+            onViewportEnter={() => {
+                animate(count, numericValue, { duration: 2 });
             }}
             viewport={{ once: true }}
         >

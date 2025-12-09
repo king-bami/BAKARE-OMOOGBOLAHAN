@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -70,24 +70,21 @@
         -webkit-text-stroke: 2px white;
         color: transparent;
       }
-
-      /* Custom scrollbar for chat */
-      .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-      }
-      .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-      }
-
-      ::selection {
-        background-color: #0c4a6e;
-        color: white;
+      
+      /* Mask Image Gradient */
+      .mask-image-gradient {
+        mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+        -webkit-mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
       }
 
       /* Loader specific styles */
       .loader-text {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      }
+      
+      ::selection {
+        background-color: #0c4a6e;
+        color: white;
       }
     </style>
   <script type="importmap">

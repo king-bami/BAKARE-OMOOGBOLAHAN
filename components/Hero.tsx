@@ -1,13 +1,50 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
 import { SOCIAL_LINKS } from '../constants';
 
 const Hero: React.FC = () => {
   const PROFILE_IMAGE = "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2549&auto=format&fit=crop";
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Mouse position tracking for parallax
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const mouseXSpring = useSpring(x);
+  const mouseYSpring = useSpring(y);
+
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["7deg", "-7deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-7deg", "7deg"]);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = containerRef.current?.getBoundingClientRect();
+    if (rect) {
+      const width = rect.width;
+      const height = rect.height;
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
+      
+      const xPct = mouseX / width - 0.5;
+      const yPct = mouseY / height - 0.5;
+
+      x.set(xPct);
+      y.set(yPct);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
 
   return (
-    <section className="relative min-h-screen flex items-center bg-[#f8f8f8] pt-24 pb-12 lg:pt-0 overflow-hidden">
+    <section 
+        ref={containerRef}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        className="relative min-h-screen flex items-center bg-[#f8f8f8] pt-24 pb-12 lg:pt-0 overflow-hidden perspective-1000"
+    >
        {/* Background Decorative Elements */}
        <div className="absolute top-0 right-0 w-full lg:w-1/2 h-full bg-gray-100/50 lg:-skew-x-12 lg:translate-x-20 z-0" />
        <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-100/30 rounded-full blur-3xl filter opacity-50 pointer-events-none" />
@@ -78,8 +115,18 @@ const Hero: React.FC = () => {
              animate={{ opacity: 1, scale: 1, y: 0 }}
              transition={{ duration: 0.8, delay: 0.3 }}
              className="order-1 lg:order-2 flex justify-center lg:justify-end relative"
+             style={{ 
+                 perspective: 1000,
+             }}
           >
-             <div className="relative w-full max-w-md lg:max-w-xl aspect-[3.5/4.5]">
+             <motion.div 
+                className="relative w-full max-w-md lg:max-w-xl aspect-[3.5/4.5]"
+                style={{
+                    rotateX: rotateX,
+                    rotateY: rotateY,
+                    transition: "all 0.1s ease"
+                }}
+             >
                 {/* Decorative Frame */}
                 <div className="absolute inset-0 border-2 border-brand-900/5 rounded-[2rem] transform translate-x-4 translate-y-4 z-0"></div>
                 
@@ -100,6 +147,10 @@ const Hero: React.FC = () => {
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 1 }}
+                    style={{
+                        x: useTransform(mouseXSpring, [-0.5, 0.5], [15, -15]),
+                        y: useTransform(mouseYSpring, [-0.5, 0.5], [15, -15]),
+                    }}
                     className="absolute bottom-8 -left-4 lg:-left-12 z-20 bg-white/95 backdrop-blur-md p-5 rounded-2xl shadow-xl border border-white/50 max-w-[240px]"
                 >
                     <div className="flex items-center gap-3 mb-2">
@@ -110,7 +161,7 @@ const Hero: React.FC = () => {
                     </div>
                     <p className="font-bold text-gray-900 leading-tight">Founder & CTO <br/>@ Attenda Africa</p>
                 </motion.div>
-             </div>
+             </motion.div>
           </motion.div>
 
        </div>

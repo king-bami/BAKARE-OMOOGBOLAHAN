@@ -11,20 +11,28 @@ import StickyCTA from './components/StickyCTA';
 import Services from './components/Services';
 import Contact from './components/Contact';
 import Loader from './components/Loader';
+import Process from './components/Process';
+import About from './components/About';
+import CustomCursor from './components/ui/CustomCursor';
+import ScrollProgress from './components/ui/ScrollProgress';
 
 function App() {
   const [loading, setLoading] = useState(true);
 
   return (
     <div className="min-h-screen bg-white">
+        <CustomCursor />
+        <ScrollProgress />
         {loading && <Loader onComplete={() => setLoading(false)} />}
         <Navbar />
         <main>
           <Hero />
           <Services />
-          <Experience />
+          <Process />
           <Projects />
           <Stats />
+          <About />
+          <Experience />
           <Skills />
           <Testimonials />
           <Contact />

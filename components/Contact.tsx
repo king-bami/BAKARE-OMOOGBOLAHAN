@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { ArrowUpRight, Github, Linkedin, Mail } from 'lucide-react';
 import { SOCIAL_LINKS } from '../constants';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 

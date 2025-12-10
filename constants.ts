@@ -24,7 +24,7 @@ export const EXPERIENCES: Experience[] = [
       "Migrated the system from React to Next.js (SSR/SSG) to improve SEO, scalability, and performance for 2,500+ active users."
     ],
     techStack: ["Next.js", "Node.js", "Express", "MongoDB", "TailwindCSS", "JWT", "Socket.IO", "Paystack API", "AI Recommendation API"],
-    link: "https://seamlesssautopart.netlify.app/"
+    link: "https://seamlessautopart.netlify.app/"
   },
   {
     company: "ParcelTrack",
@@ -57,6 +57,19 @@ export const EXPERIENCES: Experience[] = [
     ],
     techStack: ["Next.js", "Supabase", "TailwindCSS", "Hugging Face API", "Chart.js", "Telegram API", "Edge Functions", "RBAC"],
     link: "https://attenda.africa"
+  },
+  {
+    company: "NYSC Charity Group",
+    role: "CDS President (Community Leadership)",
+    location: "Abeokuta North, Ogun State",
+    period: "Service Year",
+    description: [
+      "Led high-impact projects focused on youth empowerment and digital transformation as President of the Charity CDS group.",
+      "Initiated and executed a major tech training program for 200+ students in collaboration with Crescent University and SQI College of ICT.",
+      "Oversaw planning, content coordination, volunteer management, and execution to reduce the digital divide in the community."
+    ],
+    techStack: ["Leadership", "Community Building", "Project Management", "Public Speaking"],
+    link: "https://www.linkedin.com/posts/omogbolahan-i-bakare-8a0741293_techforgood-empowermentthrougheducation-nysc-activity-7307885717475487744-fzv7"
   },
   {
     company: "Afrisata Awards",
@@ -169,6 +182,12 @@ export const STATS = [
 ];
 
 export const TESTIMONIALS = [
+  {
+      name: "Obed Jonathan",
+      role: "Technology Consultant || Cybersecurity Engineer",
+      image: "https://randomuser.me/api/portraits/men/91.jpg",
+      text: "I can confidently beat my chest that Gbolahan is excellent. His technical depth, combined with his leadership as a President during his service year, makes him a rare gem in the tech space. He delivers world-class results every time."
+  },
   {
       name: "Adewale O.",
       role: "Project Manager",

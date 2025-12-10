@@ -1,11 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Users, Building, ArrowUpRight, Award } from 'lucide-react';
 
 const About: React.FC = () => {
     return (
         <section id="about" className="py-24 bg-white overflow-hidden">
             <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center mb-24">
                     
                     {/* Editorial Image Side */}
                     <motion.div 
@@ -73,8 +74,78 @@ const About: React.FC = () => {
                             </div>
                         </div>
                     </motion.div>
-
                 </div>
+
+                {/* Community Impact Section - Case Study Style */}
+                <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    className="relative bg-gray-900 rounded-[2rem] p-8 md:p-16 overflow-hidden"
+                >
+                    {/* Background Pattern */}
+                    <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '24px 24px' }}></div>
+                    
+                    <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/20 text-brand-300 border border-brand-500/30 text-xs font-bold mb-6 tracking-wider">
+                                COMMUNITY LEADERSHIP
+                            </div>
+                            <h3 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                                Empowering 200+ Youths through Tech.
+                            </h3>
+                            <p className="text-gray-400 text-lg mb-8 leading-relaxed">
+                                As the <strong>President of the NYSC CDS Charity Group</strong> (Abeokuta North), I initiated and executed a major digital skills program. 
+                                By securing partnerships with <strong>Crescent University</strong> and <strong>SQI College of ICT</strong>, we bridged the digital divide for over 200 students.
+                            </p>
+                            
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+                                <div className="bg-gray-800/50 p-4 rounded-xl border border-gray-700">
+                                    <div className="flex items-center gap-3 mb-2">
+                                        <Users className="text-brand-400" size={24} />
+                                        <span className="text-2xl font-bold text-white">200+</span>
+                                    </div>
+                                    <p className="text-sm text-gray-500">Beneficiaries trained in Web Dev & Digital Literacy</p>
+                                </div>
+                                <div className="bg-gray-800/50 p-4 rounded-xl border border-gray-700">
+                                    <div className="flex items-center gap-3 mb-2">
+                                        <Building className="text-green-400" size={24} />
+                                        <span className="text-xl font-bold text-white">2 Top</span>
+                                    </div>
+                                    <p className="text-sm text-gray-500">Institutions Partnered (Crescent & SQI)</p>
+                                </div>
+                            </div>
+
+                            <a 
+                                href="https://www.linkedin.com/posts/omogbolahan-i-bakare-8a0741293_techforgood-empowermentthrougheducation-nysc-activity-7307885717475487744-fzv7" 
+                                target="_blank" 
+                                rel="noreferrer"
+                                className="inline-flex items-center gap-2 text-white font-bold hover:text-brand-400 transition-colors group"
+                            >
+                                Read Impact Report on LinkedIn <ArrowUpRight className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" size={18} />
+                            </a>
+                        </div>
+                        
+                        <div className="relative">
+                            <div className="absolute inset-0 bg-brand-600 blur-[100px] opacity-20"></div>
+                            <div className="relative bg-gray-800 rounded-2xl p-8 border border-gray-700">
+                                <Award className="text-yellow-400 mb-6" size={48} />
+                                <h4 className="text-xl font-bold text-white mb-4">Why This Matters</h4>
+                                <p className="text-gray-400 leading-relaxed mb-6">
+                                    "This initiative reflects my belief that technology is a tool for empowerment. As both a tech founder and community leader, I am committed to using my skills to create impactful programs that uplift youth and build stronger, tech-driven communities."
+                                </p>
+                                <div className="flex items-center gap-4">
+                                    <div className="h-10 w-10 rounded-full bg-gray-700 flex items-center justify-center text-white font-bold">OB</div>
+                                    <div>
+                                        <div className="text-white font-bold text-sm">Omogbolahan Bakare</div>
+                                        <div className="text-gray-500 text-xs">NYSC CDS President</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </motion.div>
             </div>
         </section>
     );

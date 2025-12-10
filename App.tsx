@@ -15,6 +15,7 @@ import Process from './components/Process';
 import About from './components/About';
 import CustomCursor from './components/ui/CustomCursor';
 import ScrollProgress from './components/ui/ScrollProgress';
+import FeaturedEndorsement from './components/FeaturedEndorsement';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -26,15 +27,37 @@ function App() {
         {loading && <Loader onComplete={() => setLoading(false)} />}
         <Navbar />
         <main>
+          {/* 1. Introduction: Who I am */}
           <Hero />
-          <Services />
-          <Process />
+          
+          {/* 2. Instant Trust: High-level endorsement */}
+          <FeaturedEndorsement />
+
+          {/* 3. The Proof: Show the work immediately */}
           <Projects />
+          
+          {/* 4. The Scale: Quantitative Impact */}
           <Stats />
-          <About />
+
+          {/* 5. The Offer: What I do */}
+          <Services />
+
+          {/* 6. The Method: How I do it (Technical Assurance) */}
+          <Process />
+
+          {/* 7. The History: Resume & Track Record */}
           <Experience />
+
+          {/* 8. The Story: Founder & Community Leader */}
+          <About />
+
+          {/* 9. Expertise Breakdown */}
           <Skills />
+
+          {/* 10. More Social Proof */}
           <Testimonials />
+
+          {/* 11. Final Call to Action */}
           <Contact />
         </main>
         <Footer />
